@@ -1,0 +1,19 @@
+<%= form_for :word, url: words_path do |f| %>
+
+		<%= f.text_field :name, placeholder: 'Name', class: 'form-control' %>
+
+
+		<%= f.text_field :definition, placeholder: 'Definition', class: 'form-control' %>
+
+
+		<%= f.text_field :example, placeholder: 'Example', class: 'form-control' %>
+
+
+
+	
+		
+		
+		
+		<%= f.submit "Send", class: 'btn' %>
+
+	<% end %>

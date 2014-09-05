@@ -2,6 +2,7 @@ class TopicsController < ApplicationController
 
 	def index
 		@topics = Topic.all
+
 	end
 
     def show
@@ -13,7 +14,7 @@ class TopicsController < ApplicationController
 	end
 
 	def create
-		@topic = Topic.create(params.require(:topic).permit(:name))
+		@topic = Topic.create(params.require(:topic).permit(:name, :word))
 		redirect_to topics_path
 	end
 
@@ -24,7 +25,7 @@ class TopicsController < ApplicationController
 	def update
 		@topic = Topic.find(params[:id])
 		if
-			Topic.create(params.require(:topic).permit(:name))
+			Topic.create(params.require(:topic).permit(:name, :word))
 			redirect_to topics_path
 		else
 			render 'edit'

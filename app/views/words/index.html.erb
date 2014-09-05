@@ -1,13 +1,27 @@
-		<% @words.each do |t| %>
-				<tr>			
+		<table>
+		<tr>
+
+		<% @words.each do |w| %>
+							
 					
-					<td class="rows"><%= t.name %></td>
+					<td class="rows"><%=link_to w.name, word_path(w) %></td>
 
-					<td class="rows"><%= t.definition %></td>
+					<td class="rows"><%= w.definition %></td>
 
-					<td class="rows"><%= t.example %></td>
+					<td class="rows"><%= w.example %></td>
+
+
+
+				<td class="rows"><%= button_to 'Update', edit_word_path(w.id), method: 'get' %></td>
+					<td class="rows"><%= button_to 'Delete', word_path(w.id), method: 'delete', :confirm => 'Are you sure?' %></td>
+
+
+
+
+
 					
 				</tr>	
-			<%end %>
+				<% end %>
+	
 			</table>
 			<%= link_to 'Add A New word', new_word_path %>
