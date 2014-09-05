@@ -5,7 +5,7 @@ class WordsController < ApplicationController
 	end
 
     def show
-		@words = Word.find(params[:id])
+		@word = Word.find(params[:id])
 	end
 
 	def new
