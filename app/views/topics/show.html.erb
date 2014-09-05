@@ -1,0 +1,11 @@
+<div class="showtopic">
+    <p class="backing">
+      <strong>Topic:</strong>
+      <%= @topic.name %>
+    </p>
+
+    <p class="backing">
+    <%= link_to 'Edit', edit_topic_path(@topic) %> |
+    <%= link_to 'Back', topics_path %>
+    </p>
+</div>

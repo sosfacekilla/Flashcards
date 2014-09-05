@@ -1,0 +1,12 @@
+		<% @topics.each do |t| %>
+				<tr>			
+					
+					<td class="rows"><%= link_to t.name, topic_path(t) %></td>
+
+					<td class="rows"><%= button_to 'Update', edit_topic_path(t.id), method: 'get' %></td>
+					<td class="rows"><%= button_to 'Delete', topic_path(t.id), method: 'delete', :confirm => 'Are you sure?' %></td>
+					
+				</tr>	
+			<%end %>
+			</table>
+			<%= link_to 'Add A New Topic', new_topic_path %>

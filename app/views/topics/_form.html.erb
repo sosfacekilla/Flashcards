@@ -1,0 +1,7 @@
+<%= form_for :topic, url: topics_path do |f| %>
+
+		<%= f.text_field :name, placeholder: 'Name', class: 'form-control' %>
+		
+		<%= f.submit "Send", class: 'btn' %>
+
+	<% end %>

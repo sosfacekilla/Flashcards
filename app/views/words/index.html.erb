@@ -1,0 +1,13 @@
+		<% @words.each do |t| %>
+				<tr>			
+					
+					<td class="rows"><%= t.name %></td>
+
+					<td class="rows"><%= t.definition %></td>
+
+					<td class="rows"><%= t.example %></td>
+					
+				</tr>	
+			<%end %>
+			</table>
+			<%= link_to 'Add A New word', new_word_path %>
