@@ -13,9 +13,10 @@ class WordsController < ApplicationController
 	end
 
 	def create
-		Word.create(params.require(:word).permit(:name, :definition, :example))
+	Word.create(params.require(:word).permit(:name, :definition, :example))
 		redirect_to topics_path
 	end
+	
 
 	def edit
 		@word = Word.find(params[:id])
@@ -37,4 +38,8 @@ class WordsController < ApplicationController
 		redirect_to words_path
 	end
 end
+
+
+
+
 

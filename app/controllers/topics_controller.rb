@@ -14,7 +14,7 @@ class TopicsController < ApplicationController
 	end
 
 	def create
-		@topic = Topic.create(params.require(:topic).permit(:name, :word))
+		@topic = Topic.create(params.require(:topic).permit(:name))
 		redirect_to topics_path
 	end
 
@@ -25,7 +25,7 @@ class TopicsController < ApplicationController
 	def update
 		@topic = Topic.find(params[:id])
 		if
-			Topic.create(params.require(:topic).permit(:name, :word))
+			Topic.create(params.require(:topic).permit(:name))
 			redirect_to topics_path
 		else
 			render 'edit'
@@ -38,3 +38,6 @@ class TopicsController < ApplicationController
 		redirect_to topics_path
 	end
 end
+
+
+
