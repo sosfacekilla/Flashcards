@@ -2,6 +2,9 @@
 
 	<%= render 'form' %>
 
-	<%= link_to 'Show', @word %>
 
-	<%= link_to 'Back', words_path %>
+    <%= button_to 'Delete', topic_words_path(@topic, @word), method: 'delete', :confirm => 'Are you sure?' %>
+
+
+
+	<%= link_to 'Back', topic_words_path %>

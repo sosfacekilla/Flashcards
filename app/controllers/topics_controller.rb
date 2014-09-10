@@ -13,7 +13,7 @@ class TopicsController < ApplicationController
 	end
 
 	def new
-		@topic = Topic.find(params[:topic_id])
+		@topic = Topic.new
 		@word = Word.new
 	end
 

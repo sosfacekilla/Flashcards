@@ -27,13 +27,14 @@ class WordsController < ApplicationController
 
 
 	def edit
+		@topic = Topic.find(params[:topic_id])
 		@word = Word.find(params[:id])
 	end
 
 	def update
 		@word = Word.find(params[:id])
 		if
-			Word.create(params.require(:word).permit(:name, :definition, :example))
+			Word.create(params.require(:word).permit(:name, :definition, :example, :topic_id))
 			redirect_to words_path
 		else
 			render 'edit'
