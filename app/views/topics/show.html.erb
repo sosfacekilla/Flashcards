@@ -4,23 +4,28 @@
     <%= @topic.name %>
                 <br/>
 
-
+     
          <%= @words.each do |t| %>
+                 <br/>
 
-            <td>Word:<%= t.name %></td>
+            <td>Word:<%= link_to t.name, topic_word_path(t.id, @topic.id) %></td>
                 <br/>
             <td>Definition:<%= t.definition %></td>
                 <br/>
             <td>Example:<%= t.example %></td>
         <% end %>
+   
                 <br/>
 
 
     <%= link_to 'Add A New word', new_topic_word_path(@topic, @word) %>
+                <br/>
         
-
-    <%= link_to 'Edit', edit_topic_path(@topic) %> 
+     <%= link_to 'Edit', edit_topic_path(@topic) %> 
+                <br/>
 
     <%= link_to 'Back', topics_path %>
+                <br/>
+
 
 </div>
