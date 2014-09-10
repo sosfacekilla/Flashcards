@@ -2,6 +2,7 @@
 
     <strong>Topic:</strong>
     <%= @topic.name %>
+                <br/>
 
 
          <%= @words.each do |t| %>
@@ -12,6 +13,10 @@
                 <br/>
             <td>Example:<%= t.example %></td>
         <% end %>
+                <br/>
+
+
+    <%= link_to 'Add A New word', new_topic_word_path(@topic, @word) %>
         
 
     <%= link_to 'Edit', edit_topic_path(@topic) %> 
