@@ -5,7 +5,7 @@ class WordsController < ApplicationController
 	end
 
     def show
-    	@topic = Topic.find(params[:id])
+    	@topic = Topic.find(params[:topic_id])
 		@word = Word.find(params[:id])
 
 	end
@@ -43,7 +43,7 @@ class WordsController < ApplicationController
 	def destroy
 		@word = Word.find(params[:id])
 		@word.destroy
-		redirect_to topics_path
+		redirect_to topics_word_path
 	end
 
 	private

@@ -8,7 +8,7 @@
          <%= @words.each do |t| %>
                  <br/>
 
-            <td><div>Word:</div<%= link_to t.name, topic_word_path(t.id, @topic.id) %></td>
+            <td><div>Word:</div><%= link_to t.name, topic_word_path(@topic, t.id) %></td>
                 <br/>
             <td>Definition:<%= t.definition %></td>
                 <br/>
