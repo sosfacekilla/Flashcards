@@ -2,15 +2,19 @@ class TopicsController < ApplicationController
 
 	def index
 		@topics = Topic.all
+		@words = Word.all
 
 	end
 
     def show
 		@topic = Topic.find(params[:id])
+		@words = Word.all
+		@words = @words.where(topic_id: @topic.id)
 	end
 
 	def new
-		@topics = Topic.new
+		@topic = Topic.find(params[:topic_id])
+		@word = Word.new
 	end
 
 	def create
@@ -19,7 +23,9 @@ class TopicsController < ApplicationController
 	end
 
 	def edit
-		@topic = Topic.find(params[:id])
+        @topic = Topic.find(params[:id])
+		@words = Word.all
+		@words = @words.where(topic_id: @topic.id)
 	end
 
 	def update

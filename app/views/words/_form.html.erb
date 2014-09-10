@@ -1,4 +1,4 @@
-<%= form_for :word, url: words_path do |f| %>
+<%= form_for :word, url: topic_words_path do |f| %>
 
 		<%= f.text_field :name, placeholder: 'Name', class: 'form-control' %>
 
@@ -9,11 +9,11 @@
 		<%= f.text_field :example, placeholder: 'Example', class: 'form-control' %>
 
 
+		<%= f.hidden_field :topic_id, :value => @topic.id %>
 
-	
-		
-		
-		
+
 		<%= f.submit "Send", class: 'btn' %>
 
 	<% end %>
+
+	

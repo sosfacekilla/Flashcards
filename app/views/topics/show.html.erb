@@ -1,23 +1,21 @@
 <div class="showtopic">
-    <p class="backing">
-      <strong>Topic:</strong>
-      <%= @topic.name %>
-    </p>
+
+    <strong>Topic:</strong>
+    <%= @topic.name %>
 
 
+         <%= @words.each do |t| %>
 
-  
+            <td>Word:<%= t.name %></td>
+                <br/>
+            <td>Definition:<%= t.definition %></td>
+                <br/>
+            <td>Example:<%= t.example %></td>
+        <% end %>
+        
 
-  
-
-
-
-
-
-		<%= link_to 'Add A New word', new_word_path %>
-
-    <p class="backing">
     <%= link_to 'Edit', edit_topic_path(@topic) %> 
+
     <%= link_to 'Back', topics_path %>
-    </p>
+
 </div>

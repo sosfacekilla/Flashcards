@@ -1,39 +1,27 @@
 <div class="showword">
   
-
-
-
     <ul>
-
-    
-    	<li>
-      <strong>Word:</strong>
-      <%= @word.name %>
+      <li>
+        <strong>Word:</strong>
+        <%= @word.name %>
     	</li>
 
     	<li>
-     <strong>Definition:</strong>
-      <%= @word.definition %>
+        <strong>Definition:</strong>
+        <%= @word.definition %>
     	</li>
 
     	<li>
-     <strong>Example:</strong>
-      <%= @word.example %>
+        <strong>Example:</strong>
+        <%= @word.example %>
     	</li>
 
     </ul>
 
   </table>
 
+    <%= link_to 'Edit', edit_topic_word_path(@topic, @word) %> 
 
-
-
-  
-
-
-   <p class="wordshow">
-    <%= link_to 'Edit', edit_word_path(@word) %> 
-    <%= link_to 'Back', words_path %>
-    </p>
+    <%= link_to 'Back', topic_words_path %>
 
 </div>

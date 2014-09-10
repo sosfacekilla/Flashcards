@@ -5,18 +5,26 @@ class WordsController < ApplicationController
 	end
 
     def show
+    	@topic = Topic.find(params[:id])
 		@word = Word.find(params[:id])
+
 	end
 
 	def new
-		@words = Word.new
+	    @topic = Topic.find(params[:topic_id])
+		@word = Word.new
 	end
 
 	def create
-	Word.create(params.require(:word).permit(:name, :definition, :example))
-		redirect_to topics_path
+		@topic = Topic.find(params[:topic_id])
+		@word = Word.new(word_params)
+		if @word.save
+			redirect_to topics_path
+		else
+			render 'edit'
+		end
 	end
-	
+
 
 	def edit
 		@word = Word.find(params[:id])
@@ -37,7 +45,16 @@ class WordsController < ApplicationController
 		@word.destroy
 		redirect_to words_path
 	end
+
+	private
+
+		def word_params
+			params.require(:word).permit(:name, :definition, :example, :topic_id)
+	end
+
 end
+
+
 
 
 
